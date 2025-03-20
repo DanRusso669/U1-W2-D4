@@ -53,15 +53,16 @@ console.log(`Il tuo risultato è ${crazyDiff(23)}`);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function boundary(n) {
-  if (n > 20 && n <= 100) {
-    return true;
-  } else if (n === 400) {
-    return true;
-  } else {
-    return false;
-  }
+  return (n > 20 && n <= 100) || n === 400;
+  //   if (n > 20 && n <= 100) {
+  //     return true;
+  //   } else if (n === 400) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
 }
-console.log(boundary(89));
+console.log(boundary(20));
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -83,7 +84,7 @@ console.log(boundary(89));
 // }
 function epify(string) {
   const word = "EPICODE";
-  if (!string.startsWith(word)) {
+  if (!string.toUpperCase().startsWith(word)) {
     const newString = word.concat(" ", string);
     return newString;
   } else {
@@ -91,7 +92,7 @@ function epify(string) {
   }
 }
 
-console.log(epify("Ciao, come va ?"));
+console.log(epify("epicode Ciao, come va ?"));
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
@@ -120,8 +121,11 @@ check3and7(28);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function reverseString(string) {
-  const revString = string.split("").reverse().join("");
-  return revString;
+  // const revString = string.split("").reverse().join("");
+  const Str = string.split("");
+  const revStr = Str.reverse();
+  const newStr = revStr.join("");
+  return newStr;
 }
 console.log(reverseString("EPICODE"));
 
